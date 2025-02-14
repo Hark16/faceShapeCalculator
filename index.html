@@ -10,21 +10,26 @@
     <style>
         /* Header Styles */
         header {
-            background-color: #2B547E;
+            background: #fff;
             padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 1rem;
         }
 
         .logo {
-            height: 50px;
+            width: 50px;
+            margin-right: 1rem;
         }
 
-        .site-title {
-            color: white;
-            margin: 0;
-        }
 
         /* Navigation Styles */
         nav {
@@ -133,9 +138,10 @@
 </head>
 <body>
     <header>
-
-        <img src="https://www.kindpng.com/picc/m/3-31503_capital-letter-h-h-logo-transparent-background-hd.png" alt="Site Logo" class="logo">
-        <h1 class="site-title">Face Shape Calculator</h1>
+        <div class="header-content">
+            <img src="https://www.kindpng.com/picc/m/3-31503_capital-letter-h-h-logo-transparent-background-hd.png" alt="Logo" class="logo">
+            <h1>Face Shape Calculator</h1>
+        </div>
     </header>
 
     <nav>
@@ -246,37 +252,139 @@
 
 <div id="div2">
 
-about us
+
+        <h2>About Us</h2>
+        <p>Welcome to <strong>Face Shape Calculator</strong>! We are a team of experts dedicated to helping you determine your face shape in the simplest and most accurate way. Our web app uses advanced algorithms and facial recognition technology to analyze your facial features and provide you with a precise face shape classification.</p>
+
+        <h2>Our Mission</h2>
+        <p>Our mission is to provide a free, easy-to-use tool that helps individuals discover their face shape and offers useful information about how to enhance their look based on their unique features. Whether you're looking for style tips or just curious about your face shape, we're here to help!</p>
+
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li><strong>Expertise:</strong> With years of experience in facial recognition technology, our team ensures accuracy and reliability in every result.</li>
+            <li><strong>Fast & Simple:</strong> The Face Shape Calculator is user-friendly, quick, and requires no technical knowledge to use.</li>
+            <li><strong>Free of Charge:</strong> Access all our services completely free, with no hidden fees or subscriptions.</li>
+        </ul>
+
+        <h2>Our Experts</h2>
+        <p>We are a team of professionals who specialize in facial analysis and have developed this web app based on scientific principles. Our experts have worked hard to provide you with a precise tool that you can trust!</p>
+
 
 </div>
 
 <div id="div3">
 
-contact us
+
+        <h2>Contact Us</h2>
+        <p>Have a question or need assistance? We are here to help! Please fill out the form below, and we will get back to you as soon as possible.</p>
+        
+        <form action="submit_form.php" method="POST" class="contact-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <p>If you prefer, you can also email us directly at <a href="mailto:faceshapecalculator@gmail.com">faceshapecalculator@gmail.com</a>.</p>
+
 
 </div>
 
 <div id="div4">
 
-terms and conditions 
+    <h2>Terms and Conditions</h2>
+    <p>Welcome to Face Shape Calculator!</p>
+    <p>These terms and conditions outline the rules and regulations for the use of Face Shape Calculator's Website, located at <a href="https://Face Shape Calculator">https://Face Shape Calculator</a>.</p>
+    <p>By accessing this website, we assume you accept these terms and conditions. Do not continue to use Face Shape Calculator if you do not agree to take all of the terms and conditions stated on this page.</p>
+
+    <h3>COOKIES</h3>
+    <p>We employ the use of cookies. By accessing Face Shape Calculator, you agreed to use cookies in agreement with Face Shape Calculator's Privacy Policy.</p>
+
+    <h3>LICENSE</h3>
+    <p>Unless otherwise stated, Face Shape Calculator and/or its licensors own the intellectual property rights for all material on Face Shape Calculator. All intellectual property rights are reserved. You may access this from Face Shape Calculator for your own personal use subjected to restrictions set in these terms and conditions.</p>
+    
+    <h3>COMMENTS</h3>
+    <p>Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of the website...</p>
+
+    <h3>DISCLAIMER</h3>
+    <p>To the maximum extent permitted by applicable law, we exclude all representations, warranties, and conditions relating to our website and the use of this website...</p>
+
 
 </div>
 
 <div id="div5">
 
-privacy policy
+
+    <h2>Privacy Policy</h2>
+    <p>At Face Shape Calculator, accessible from <a href="https://Face Shape Calculator">https://Face Shape Calculator</a>, one of our main priorities is the privacy of our visitors.</p>
+
+    <h3>CONSENT</h3>
+    <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
+
+    <h3>INFORMATION WE COLLECT</h3>
+    <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you...</p>
+
+    <h3>HOW WE USE YOUR INFORMATION</h3>
+    <p>We use the information we collect in various ways, including to provide, operate, and maintain our website...</p>
+
+    <h3>LOG FILES</h3>
+    <p>Face Shape Calculator follows a standard procedure of using log files...</p>
+
+    <h3>GOOGLE DOUBLECLICK DART COOKIE</h3>
+    <p>Google is one of a third-party vendor on our site...</p>
+
+    <h3>ADVERTISING PARTNERS PRIVACY POLICIES</h3>
+    <p>You may consult this list to find the Privacy Policy for each of the advertising partners...</p>
+
+    <h3>CCPA PRIVACY RIGHTS</h3>
+    <p>Under the CCPA, among other rights, California consumers have the right to...</p>
+
 
 </div>
 
 <div id="div6">
 
-disclaimer
+
+    <h2>Disclaimer</h2>
+    <p>If you require any more information or have any questions about our site's disclaimer, please feel free to contact us by email at <a href="mailto:filmyReview@Face Shape Calculator">filmyReview@Face Shape Calculator</a>.</p>
+
+    <p>All the information on this website - <a href="https://Face Shape Calculator">https://Face Shape Calculator</a> - is published in good faith and for general information purpose only...</p>
+
+    <p>Face Shape Calculator will not be liable for any losses and/or damages in connection with the use of our website...</p>
+
+    <h3>CONSENT</h3>
+    <p>By using our website, you hereby consent to our disclaimer and agree to its terms.</p>
+
+    <h3>UPDATE</h3>
+    <p>Should we update, amend or make any changes to this document, those changes will be prominently posted here.</p>
+
 
 </div>
 
 <div id="div7">
 
-d m c a policy
+
+    <h2>DMCA Policy</h2>
+    <p>At Face Shape Calculator, we respect the intellectual property rights of others and expect our users to do the same.</p>
+
+    <h3>FILING A DMCA COMPLAINT</h3>
+    <p>If you believe that your copyrighted material has been posted on Face Shape Calculator without authorization, you may file a DMCA complaint by providing the following information...</p>
+
+    <h3>SEND YOUR COMPLAINT TO</h3>
+    <p>Please send your DMCA complaint to the designated Copyright Agent for Face Shape Calculator: <a href="mailto:copyright@Face Shape Calculator">copyright@Face Shape Calculator</a></p>
+
+    <h3>COUNTER NOTIFICATION</h3>
+    <p>If you believe that material you posted on Face Shape Calculator was removed or disabled in error, you may submit a counter-notification...</p>
+
+    <h3>REPEAT INFRINGERS</h3>
+    <p>Face Shape Calculator reserves the right to terminate user accounts found to be repeat infringers.</p>
+
+    <h3>IMPORTANT NOTES</h3>
+    <p>Misrepresenting material as infringing may result in legal consequences...</p>
+
 
 </div>
 
@@ -382,4 +490,5 @@ document.getElementById("div1").style.display = "block";
 
     </script>
 </body>
-</html>>
+</html>
+
