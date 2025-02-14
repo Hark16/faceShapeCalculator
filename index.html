@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Shape Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Header Styles */
+        header {
+            background-color: #2B547E;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .site-title {
+            color: white;
+            margin: 0;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #4B6E9B;
+            padding: 1rem;
+        }
+
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Calculator Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .calculator {
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #2B547E;
+            color: white;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Calculator Elements */
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #2B547E;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        .result {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #f8f8f8;
+            border-radius: 4px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1rem;
+        }
+
+        .face-image {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+        <img src="https://www.kindpng.com/picc/m/3-31503_capital-letter-h-h-logo-transparent-background-hd.png" alt="Site Logo" class="logo">
+        <h1 class="site-title">Face Shape Calculator</h1>
+    </header>
+
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="#" onclick="link(1)">Home</a></li>
+            <li><a href="#" onclick="link(2)">About</a></li>
+            <li><a href="#" onclick="link(3)">Contact</a></li>
+
+            <li><a href="#" onclick="link(4)">Terms and Conditions</a></li>
+            <li><a href="#" onclick="link(5)">Privacy Policy</a></li>
+            <li><a href="#" onclick="link(6)">Disclaimer</a></li>
+            <li><a href="#" onclick="link(7)">DMCA policy</a></li>
+
+</ul>
+    </nav>
+
+    <main>
+
+<div style="text-align: center; padding: 50px; background-color: #f0f8ff; border-bottom: 2px solid #ddd;">
+    <img src="https://cdn.pixabay.com/photo/2016/03/31/19/14/face-1296220_1280.png" alt="Face Shape Diagram" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+    <h2 style="font-size: 2.5rem; color: #333; margin-bottom: 10px;">Discover Your Perfect Face Shape</h2>
+    <p style="font-size: 1.2rem; color: #555; max-width: 800px; margin: 0 auto;">
+        Unlock personalized styling advice by determining your unique face shape. Our Face Shape Calculator analyzes your facial measurements to provide insights tailored to you. Whether you're choosing a new hairstyle, selecting eyewear, or refining your makeup techniques, understanding your face shape is the first step to enhancing your natural beauty.
+    </p>
+</div>
+
+        <div id="div1" class="calculator">
+            <h2>Face Shape Calculator</h2>
+            
+            <div class="input-group">
+                <label>Forehead Width (cm):</label>
+                <input type="number" id="forehead" step="0.1">
+            </div>
+
+            <div class="input-group">
+                <label>Cheekbone Width (cm):</label>
+                <input type="number" id="cheekbone" step="0.1">
+            </div>
+
+            <div class="input-group">
+                <label>Jawline Width (cm):</label>
+                <input type="number" id="jawline" step="0.1">
+            </div>
+
+            <div class="input-group">
+                <label>Face Length (cm):</label>
+                <input type="number" id="length" step="0.1">
+            </div>
+
+            <button onclick="calculateShape()">Calculate Face Shape</button>
+
+            <div id="result" class="result"></div>
+
+<section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    
+    <details>
+        <summary>What is a face shape calculator?</summary>
+        <p>A face shape calculator helps determine your face shape based on measurements like forehead width, cheekbone width, jawline width, and face length.</p>
+    </details>
+
+    <details>
+        <summary>How accurate is this face shape calculator?</summary>
+        <p>The calculator provides a general estimate of your face shape. For precise results, measure carefully and ensure correct input values.</p>
+    </details>
+
+    <details>
+        <summary>What are the common face shapes?</summary>
+        <p>Common face shapes include oval, round, square, heart, diamond, and oblong.</p>
+    </details>
+
+    <details>
+        <summary>How do I measure my face correctly?</summary>
+        <p>Use a flexible measuring tape and measure in centimeters for accuracy. Ensure measurements are taken straight across and not diagonally.</p>
+    </details>
+
+    <details>
+        <summary>Can my face shape change over time?</summary>
+        <p>Yes, weight changes, aging, and lifestyle factors can affect your face shape over time.</p>
+    </details>
+
+    <details>
+        <summary>Why is knowing my face shape important?</summary>
+        <p>Knowing your face shape helps in choosing hairstyles, glasses, makeup styles, and even beard styles that best complement your features.</p>
+    </details>
+
+    <details>
+        <summary>Is this calculator suitable for both men and women?</summary>
+        <p>Yes, this face shape calculator works for everyone, regardless of gender.</p>
+    </details>
+</section>
+
+<section id="benefits">
+    <h2>Benefits of Knowing Your Face Shape</h2>
+    
+    <ul>
+        <li><strong>Hairstyle Selection:</strong> Helps you choose the most flattering hairstyle for your face shape.</li>
+        <li><strong>Eyewear Selection:</strong> Guides you in picking the best glasses or sunglasses that enhance your look.</li>
+        <li><strong>Makeup Application:</strong> Allows better contouring and highlighting techniques for an attractive appearance.</li>
+        <li><strong>Beard Grooming:</strong> Assists men in selecting the right beard style to complement their face shape.</li>
+        <li><strong>Fashion Advice:</strong> Helps in choosing necklines and accessories that suit your facial proportions.</li>
+        <li><strong>Confidence Boost:</strong> Enhances self-awareness and boosts confidence in styling choices.</li>
+        <li><strong>Better Self-Care:</strong> Encourages a better understanding of facial symmetry and balance.</li>
+    </ul>
+</section>
+
+        </div>
+
+<div id="div2">
+
+about us
+
+</div>
+
+<div id="div3">
+
+contact us
+
+</div>
+
+<div id="div4">
+
+terms and conditions 
+
+</div>
+
+<div id="div5">
+
+privacy policy
+
+</div>
+
+<div id="div6">
+
+disclaimer
+
+</div>
+
+<div id="div7">
+
+d m c a policy
+
+</div>
+
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>© 2024 Face Shape Calculator. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const shapeImages = {
+            oblong: { 
+                man: "https://example.com/oblong-male.jpg",
+                woman: "https://example.com/oblong-female.jpg"
+            },
+            round: {
+                man: "https://example.com/round-male.jpg",
+                woman: "https://example.com/round-female.jpg"
+            },
+            square: {
+                man: "https://example.com/square-male.jpg",
+                woman: "https://example.com/square-female.jpg"
+            },
+            heart: {
+                man: "https://example.com/heart-male.jpg",
+                woman: "https://example.com/heart-female.jpg"
+            },
+            oval: {
+                man: "https://example.com/oval-male.jpg",
+                woman: "https://example.com/oval-female.jpg"
+            }
+        };
+
+        function calculateShape() {
+            const forehead = parseFloat(document.getElementById('forehead').value);
+            const cheekbone = parseFloat(document.getElementById('cheekbone').value);
+            const jawline = parseFloat(document.getElementById('jawline').value);
+            const length = parseFloat(document.getElementById('length').value);
+            const result = document.getElementById('result');
+
+            if (!forehead || !cheekbone || !jawline || !length) {
+                alert("Please fill in all measurements");
+                return;
+            }
+
+            const width = Math.max(forehead, cheekbone, jawline);
+            const lengthWidthRatio = length / width;
+            const widthDifference = Math.abs(forehead - jawline);
+            const jawDifference = jawline - forehead;
+
+            let shape = "";
+            let description = "";
+
+            if (lengthWidthRatio > 1.3) {
+                shape = "Oblong";
+                description = "Your face appears significantly longer than it is wide with a narrow appearance.";
+            } else if (Math.abs(cheekbone - forehead) < 0.5 && 
+                      Math.abs(cheekbone - jawline) < 0.5 && 
+                      lengthWidthRatio < 1.1) {
+                shape = "Round";
+                description = "Your face has almost equal length and width with soft angles.";
+            } else if (jawDifference < -1) {
+                shape = "Square";
+                description = "Strong jawline with forehead, cheekbones, and jawline nearly the same width.";
+            } else if (widthDifference > 2 && jawDifference > 1.5) {
+                shape = "Heart";
+                description = "Wide forehead tapering to a narrow chin, often with a pointed chin.";
+            } else {
+                shape = "Oval";
+                description = "Your face is longer than it is wide with soft features.";
+            }
+
+            result.innerHTML = `
+                <h2>Your Face Shape: ${shape}</h2>
+                <p>${description}</p>
+                <div class="image-container">
+                    <img src="${shapeImages[shape.toLowerCase()].man}" alt="${shape} face shape male example" class="face-image">
+                    <img src="${shapeImages[shape.toLowerCase()].woman}" alt="${shape} face shape female example" class="face-image">
+                </div>
+            `;
+        }
+
+function link(e){
+for(let i = 1 ; i <= 7 ; i++){
+document.getElementById("div" +i).style.display = "none";
+
+}
+document.getElementById("div" +e).style.display = "block";
+
+}
+
+for(let i = 1 ; i <= 7 ; i++){
+document.getElementById("div" +i).style.display = "none";
+
+}
+document.getElementById("div1").style.display = "block";
+
+    </script>
+</body>
+</html>
+
